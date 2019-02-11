@@ -1,7 +1,11 @@
 {
   "name": "insomna-plugin-otp",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "main": "index.js",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/alphashuro/insomnia-plugin-otp"
+  },
   "insomnia": {
     "name": "otp",
     "description": "Generates an OTP"

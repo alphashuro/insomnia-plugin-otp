@@ -1,0 +1,12 @@
+{
+  "name": "insomna-plugin-otp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "insomnia": {
+    "name": "otp",
+    "description": "Generates an OTP"
+  },
+  "dependencies": {
+    "speakeasy": "^2.0.0"
+  }
+}

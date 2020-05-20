@@ -8,16 +8,26 @@ module.exports.templateTags = [
     args: [
       {
         displayName: 'Secret',
-        type: 'string'
-      }
+        type: 'string',
+      },
+      {
+        displayName: 'Issuer',
+        type: 'string',
+      },
     ],
-    async run(_, secret) {
-      const token = speakeasy.totp({
-        secret: secret,
-        encoding: 'base32'
-      });
-
-      return token;
-    }
-  }
+    async run(_, secret, issuer) {
+      if (!!issuer) {
+        return speakeasy.otpauthURL({
+          secret: secret,
+          issuer: issuer,
+          label: '',
+        });
+      } else {
+        return speakeasy.totp({
+          secret: secret,
+          encoding: 'base32',
+        });
+      }
+    },
+  },
 ];
